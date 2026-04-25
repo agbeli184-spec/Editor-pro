@@ -1,0 +1,67 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-primary: #6C5CE7;
+  --color-secondary: #00D1FF;
+  --color-dark-bg: #0F0F0F;
+  --color-card-bg: #1A1A1A;
+  --color-neon-green: #00FF00;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-[#F8F9FA] antialiased overflow-x-hidden selection:bg-primary/30;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/* Custom Utilities */
+.glass {
+  @apply bg-white/[0.04] backdrop-blur-2xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+}
+
+.glass-morphism {
+  @apply bg-white/[0.06] backdrop-blur-3xl border border-white/[0.12];
+}
+
+.glow-primary {
+  @apply shadow-[0_0_20px_rgba(108,92,231,0.3)];
+}
+
+.glow-secondary {
+  @apply shadow-[0_0_20px_rgba(0,209,255,0.3)];
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.timeline-track {
+  background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 20px 100%;
+}
